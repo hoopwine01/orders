@@ -9,11 +9,10 @@ import org.springframework.stereotype.Service;
 
 import com.anz.orders.entity.Order;
 import com.anz.orders.entity.OrderStatus;
+import com.anz.orders.event.OrderStatusChangedEvent;
 import com.anz.orders.exceptions.InvalidOrderStateException;
 import com.anz.orders.exceptions.OrderNotFoundException;
 import com.anz.orders.repository.OrderRepository;
-
-import com.anz.orders.event.OrderStatusChangedEvent;
 
 @Service
 public class OrderService {
@@ -42,6 +41,7 @@ public class OrderService {
         validateTransition(order.getStatus(), newStatus);
 
         order.setStatus(newStatus);
+        order.setUpdatedAt(Instant.now());
         Order saved = repository.save(order);
 
         eventPublisher.publishEvent(

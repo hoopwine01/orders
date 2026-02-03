@@ -1,23 +1,26 @@
-package com.anz.orders.security;
+package com.anz.orders.service;
 
 import java.util.Date;
 
 import javax.crypto.SecretKey;
 
+import org.springframework.stereotype.Service;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 
-public class JwtUtil {
+@Service
+public class JwtUtilityService {
 
-    private static final SecretKey SECRET_KEY =
+     private static final SecretKey SECRET_KEY =
             Keys.hmacShaKeyFor("anz-tokenization-secret-key-which-is-very-secure".getBytes());
 
     private static final long EXPIRATION_TIME = 1000 * 60 * 60; // 1 hour
 
-    public static String generateToken(String userName, String password) {
+    public String generateToken(String username, String password) {
         return Jwts.builder()
-                .subject(userName)
+                .subject(username)
                 .claim("password", password)
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
@@ -25,11 +28,12 @@ public class JwtUtil {
                 .compact();
     }
 
-    public static Claims validateToken(String token) {
+    public Claims validateToken(String token) {
         return Jwts.parser()
                 .verifyWith(SECRET_KEY)
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
     }
+
 }

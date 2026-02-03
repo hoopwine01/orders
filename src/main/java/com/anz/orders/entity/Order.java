@@ -31,5 +31,6 @@ public class Order {
     private String description;
 
     private Instant createdAt;
+    private Instant updatedAt;
 
 }
