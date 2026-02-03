@@ -1,0 +1,20 @@
+server:
+  port: 3000
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+notifications:
+  channels:
+    - email
+    - sms
+
+logging:
+  file:
+    name: ../logs/orders_error.log
+  level:
+    root: INFO
+    com.anz: ERROR
+

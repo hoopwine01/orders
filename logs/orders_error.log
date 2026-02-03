@@ -1,0 +1,28 @@
+2026-02-03T16:24:29.863+13:00  INFO 5144 --- [orders] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-03T16:24:29.968+13:00  INFO 5144 --- [orders] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 1 JPA repository interface.
+2026-02-03T16:24:30.662+13:00  INFO 5144 --- [orders] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-03T16:24:30.975+13:00  INFO 5144 --- [orders] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:72cf2fa5-25ad-49b2-9156-e674739f2a65 user=SA
+2026-02-03T16:24:30.979+13:00  INFO 5144 --- [orders] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-03T16:24:31.056+13:00  INFO 5144 --- [orders] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-03T16:24:31.185+13:00  INFO 5144 --- [orders] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-03T16:24:32.066+13:00  INFO 5144 --- [orders] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-03T16:24:32.203+13:00  INFO 5144 --- [orders] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:72cf2fa5-25ad-49b2-9156-e674739f2a65]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 72CF2FA5-25AD-49B2-9156-E674739F2A65/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-03T16:24:33.474+13:00  INFO 5144 --- [orders] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-03T16:24:33.511+13:00  INFO 5144 --- [orders] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03T16:24:33.666+13:00  INFO 5144 --- [orders] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-03T16:24:34.358+13:00  WARN 5144 --- [orders] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-03T16:24:34.433+13:00  INFO 5144 --- [orders] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-02-03T16:24:35.891+13:00  INFO 5144 --- [orders] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03T16:24:35.900+13:00  INFO 5144 --- [orders] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-03T16:24:35.905+13:00  INFO 5144 --- [orders] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
