@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.anz.orders.model.AuthRequest;
 import com.anz.orders.service.JwtUtilityService;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -33,14 +31,9 @@ public class AuthController {
             return ResponseEntity.ok(jwtUtil.generateToken(request.getUsername(), request.getPassword()));
 
         } catch (AuthenticationException e) {
-            throw new RuntimeException("Invalid credentials");
+            log.error("Authentication failed for user {}", request.getUsername(), e);
+            return ResponseEntity.status(401).body("Authentication failed");
         }
     }
 
-
-    @Data
-    @AllArgsConstructor
-    public static class AuthResponse {
-        private String token;
-    }
 }
